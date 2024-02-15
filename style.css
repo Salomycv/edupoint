@@ -1,0 +1,123 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("C:\Users\Salomy C V\OneDrive\Desktop\task\new.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+html{
+    scroll-behavior: smooth;
+}
+#navbar{
+background-color:lightgray;
+color:brown;
+padding: 10px 0;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: brown;
+    font-size: 28px;
+    font-weight: bold;
+    text-align:center;
+}
+
+img {
+    display: block; /* This ensures no extra space below image */
+    margin: 0 auto; /* Centers the image horizontally */
+    max-width: 100%;
+    height: auto;
+}
+a{
+    float: right;
+    margin-left:10px;
+    font-size: 25px;
+    background-color:white;
+}
+h1{
+    background-color: lightgray;
+    color: brown;
+    font-size: 60px;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.first a{
+    float: left;
+}
+
+ /* Style for form */
+ .signup-form, .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    display: none; /* Initially hide both forms */
+}
+
+.tutorial-link{
+    color: red;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.signup-form h2, .login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"],
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.signup-form button,
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.error-message {
+    color: red;
+}
+.links-container {
+    display: flex;
+    flex-direction: column;
+    background-color: brown;
+   
+  }
+  .links-container a {
+    margin-bottom: 10px; /* Add spacing between links */
+    text-decoration: none;
+    background-color: brown;
+    color: white;
+  }
+.h2{
+    font-weight: bold;
+    background-color: brown;
+    color: white;
+}

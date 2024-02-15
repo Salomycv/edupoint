@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+</head>
+<body>
+<div id="navbar">
+<a href="#login" id="login-link">Login</a>
+<a href="#signup" id="signup-link">Sign Up</a>
+</div>
+
+<div>
+    <h1 ><b style="margin-left: 21%;">EduPoint</b></h1>
+</div>
+
+<div class="image-container">
+    <img src="image/new.jpg" alt="pic">
+    <div class="image-text">EduPoint is a simple website for students who are really interested to learn coding.
+    <a href="#learn more" class="tutorial-link">Learn More</a>
+</div>
+</div>
+<!-- Registration form -->
+
+<div id="signup" class="signup-form">
+    <h2>Sign Up</h2>
+    <form id="signup-form" onsubmit="return validateSignUpForm()">
+        <input type="text" id="signup-username" name="username" placeholder="Username" required>
+        <input type="email" id="signup-email" name="email" placeholder="Email" required>
+        <input type="password" id="signup-password" name="password" placeholder="Password" required>
+        <div id="signup-error-message" class="error-message"></div>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+
+
+<div id="login" class="login-form">
+    <h2>Login</h2>
+    <form id="login-form" onsubmit="return validateLoginForm()">
+        <input type="email" id="login-email" name="email" placeholder="Email" required>
+        <input type="password" id="login-password" name="password" placeholder="Password" required>
+        <div id="login-error-message" class="error-message"></div>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<div>
+    <h2 class="text-center h2" >TUTORIALS</h2>
+</div>
+<div class="links-container">
+    <a href="tutorial/java.pdf">JAVA</a>
+    <a href="tutorial/c.pdf">C</a>
+    <a href="tutorial/css.pdf">CSS</a>
+    <a href="tutorial/html.pdf">HTML</a>
+  </div>
+<script>
+    // Function to toggle between login and signup forms
+    document.getElementById("login-link").addEventListener("click", function() {
+        document.getElementById("login").style.display = "block";
+        document.getElementById("signup").style.display = "none";
+    });
+
+    document.getElementById("signup-link").addEventListener("click", function() {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("signup").style.display = "block";
+    });
+
+    // Validation for signup form
+    function validateSignUpForm() {
+        // Your signup form validation code goes here
+        return true; // For example, always return true for now
+    }
+
+    // Validation for login form
+    function validateLoginForm() {
+        // Your login form validation code goes here
+        return true; // For example, always return true for now
+    }
+</script>
+
+<!--  -->
+<script>
+    function openPdf1() {
+        // Path to your PDF file
+        var pdfPath = '"C:\Users\Salomy C V\OneDrive\Desktop\Retask\pdf"';
+    
+        // Initialize the PDF viewer container
+        var container = document.getElementById('pdfViewer');
+    
+        // Load the PDF file
+        pdfjsLib.getDocument(pdfPath).promise.then(function(pdf) {
+            pdf.getPage(1).then(function(page) {
+                // Create a canvas element to render the PDF page
+                var canvas = document.createElement('canvas');
+                container.appendChild(canvas);
+    
+                // Set canvas dimensions
+                var viewport = page.getViewport({ scale: 1.0 });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+    
+                // Render the PDF page on the canvas
+                var context = canvas.getContext('2d');
+                page.render({ canvasContext: context, viewport: viewport });
+    
+                // Scroll to the PDF viewer
+                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    }
+    </script>
+</body>
+</html>
